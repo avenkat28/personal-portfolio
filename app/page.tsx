@@ -1,5 +1,5 @@
 const resumeLink = "/resume.pdf"; // Place your resume PDF in the public folder as public/resume.pdf.
-const email = "your.email@example.com"; // Update this with your preferred recruiter contact email.
+const email = "venkat.ar@northeastern.edu"; // Update this with your preferred recruiter contact email.
 const githubUrl = "https://github.com/avenkat28"; // Update this with your GitHub profile.
 const linkedinUrl = "https://www.linkedin.com/in/arya-venkat-81526b245/"; // Update this with your LinkedIn profile.
 
@@ -8,8 +8,7 @@ const projects = [
     title: "NLP Smart Calendar",
     description:
       "Built a smart calendar assistant during a Cisco hackathon using Flask, React, and the Google Calendar API. The app used NLP and voice input to parse natural language scheduling requests such as \"tomorrow for a half hour\" and convert them into calendar events.",
-    tech: ["Python", "Flask", "React", "Google Calendar API", "NLP", "REST APIs"],
-    github: "#" // Update this with the project GitHub link.
+    tech: ["Python", "Flask", "React", "Google Calendar API", "NLP", "REST APIs"]
   },
   {
     title: "Premier League Transfer Value ML Research",
