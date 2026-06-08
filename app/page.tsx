@@ -5,6 +5,13 @@ const linkedinUrl = "https://www.linkedin.com/in/arya-venkat-81526b245/"; // Upd
 
 const projects = [
   {
+    title: "RiskWeeks",
+    description:
+      "Built a semester planning web app that helps students identify deadline clusters and high-risk weeks from their syllabi. The app turns course dates, grade-critical work, and prep actions into a dashboard for planning ahead.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF parsing", "data visualization"],
+    live: "https://risk-weeks.vercel.app/"
+  },
+  {
     title: "NLP Smart Calendar",
     description:
       "Built a smart calendar assistant during a Cisco hackathon using Flask, React, and the Google Calendar API. The app used NLP and voice input to parse natural language scheduling requests such as \"tomorrow for a half hour\" and convert them into calendar events.",
@@ -226,9 +233,10 @@ export default function Home() {
                     <Badge key={tech}>{tech}</Badge>
                   ))}
                 </div>
-                {project.github ? (
+                {project.github || project.live ? (
                   <div className="mt-6 flex gap-3">
-                    <LinkButton href={project.github}>GitHub</LinkButton>
+                    {project.live ? <LinkButton href={project.live}>Live Site</LinkButton> : null}
+                    {project.github ? <LinkButton href={project.github}>GitHub</LinkButton> : null}
                   </div>
                 ) : null}
               </article>
