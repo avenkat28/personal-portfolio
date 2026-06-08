@@ -16,6 +16,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.hero-scene {
+  background-image:
+    linear-gradient(180deg, rgba(9, 18, 29, 0.25), rgba(9, 18, 29, 0.85)),
+    url("/sf-skyline.jpg"),
+    radial-gradient(circle at 50% 35%, #263f4a 0%, #10212a 52%, #071117 100%);
+  background-position: center;
+  background-size: cover;
+}
+
+.city-band {
+  background-image:
+    linear-gradient(180deg, rgba(9, 18, 29, 0.72), rgba(9, 18, 29, 0.78)),
+    url("/boston-skyline.jpg"),
+    linear-gradient(135deg, #162938, #0c141d);
+  background-position: center;
+  background-size: cover;
+}
+
 ::selection {
   background: #cfe0ff;
   color: #172033;

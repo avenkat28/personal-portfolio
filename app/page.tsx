@@ -89,12 +89,6 @@ const experiences = [
     organization: "Smart Calendar Project",
     description:
       "Built an NLP scheduling assistant with voice input, a React interface, Flask APIs, and Google Calendar integration."
-  },
-  {
-    title: "Full-Stack Database Project",
-    organization: "MealBuddy",
-    description:
-      "Designed relational schemas, REST API endpoints, and persona-focused interfaces for a meal planning application."
   }
 ];
 
@@ -154,77 +148,44 @@ function LinkButton({
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-paper">
-      <section className="border-b border-slate-200 bg-[#fbfcff]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
-          <a href="#" className="text-sm font-bold tracking-tight text-ink">
-            Arya Venkat
-          </a>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 sm:flex">
-            <a className="transition hover:text-accent" href="#projects">
+    <main className="min-h-screen overflow-hidden bg-[#f2f0ec]">
+      <section className="hero-scene relative flex min-h-screen items-center justify-center px-5 py-12 text-white">
+        <div className="absolute inset-0 bg-ink/55" />
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+          <div className="flex w-full items-center justify-center">
+            <div className="hidden h-px flex-1 bg-white/70 sm:block" />
+            <div className="grid h-28 w-28 place-items-center rounded-full border border-white/80 bg-white/5 text-3xl font-bold shadow-soft backdrop-blur-sm">
+              AV
+            </div>
+            <div className="hidden h-px flex-1 bg-white/70 sm:block" />
+          </div>
+          <div className="h-20 w-px bg-white/70" />
+          <h1 className="text-5xl font-bold uppercase tracking-[0.26em] sm:text-6xl">Arya Venkat</h1>
+          <p className="mt-8 max-w-4xl text-sm font-semibold uppercase tracking-[0.28em] text-white/85 sm:text-base">
+            Computer Science and Business Student at Northeastern University
+          </p>
+          <p className="mt-5 max-w-3xl text-sm uppercase tracking-[0.2em] text-white/75 sm:text-base">
+            Software Engineering | AI/ML | Data Analytics | Product | Fintech
+          </p>
+          <div className="mt-16 h-px w-full max-w-4xl bg-white/70" />
+          <nav className="mt-10 grid w-full max-w-3xl grid-cols-2 overflow-hidden rounded-lg border border-white/80 bg-black/10 text-xs font-semibold uppercase tracking-[0.24em] backdrop-blur-sm sm:grid-cols-4 sm:text-sm">
+            <a className="border-b border-r border-white/50 px-4 py-5 transition hover:bg-white/15 sm:border-b-0" href="#about">
+              Intro
+            </a>
+            <a className="border-b border-white/50 px-4 py-5 transition hover:bg-white/15 sm:border-b-0 sm:border-r" href="#projects">
               Projects
             </a>
-            <a className="transition hover:text-accent" href="#skills">
+            <a className="border-r border-white/50 px-4 py-5 transition hover:bg-white/15" href="#skills">
               Skills
             </a>
-            <a className="transition hover:text-accent" href="#contact">
+            <a className="px-4 py-5 transition hover:bg-white/15" href="#contact">
               Contact
             </a>
           </nav>
-        </div>
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-10 sm:pb-20 sm:pt-14 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-24">
-          <div className="flex flex-col justify-center">
-            <p className="w-fit rounded-full border border-moss/15 bg-moss/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-moss">
-              Fintech-focused CS and Business
-            </p>
-            <h1 className="mt-6 max-w-3xl text-5xl font-bold tracking-tight text-ink sm:text-6xl">
-              Arya Venkat
-            </h1>
-            <p className="mt-5 max-w-2xl text-xl font-semibold text-slate-800">
-              Computer Science and Business Student at Northeastern University
-            </p>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-              Interested in software engineering, AI/ML, data analytics, product management, and fintech.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <LinkButton href="#projects" variant="primary">
-                View Projects
-              </LinkButton>
-              <LinkButton href={resumeLink}>Download Resume</LinkButton>
-              <LinkButton href={githubUrl}>GitHub</LinkButton>
-              <LinkButton href={linkedinUrl}>LinkedIn</LinkButton>
-            </div>
-          </div>
-
-          <div className="flex items-center lg:justify-end">
-            <div className="w-full max-w-md rounded-lg border border-slate-200 bg-white p-6 shadow-soft">
-              <div className="flex items-center justify-between border-b border-slate-200 pb-5">
-                <div>
-                  <p className="text-sm font-semibold text-moss">Portfolio Snapshot</p>
-                  <p className="mt-1 text-2xl font-bold text-ink">Software + Data + Business</p>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white shadow-card">
-                  AV
-                </div>
-              </div>
-              <div className="mt-6 grid gap-3">
-                {["Full-stack development", "Machine learning research", "NLP tools", "Database design", "Sports analytics"].map(
-                  (item, index) => (
-                    <div
-                      key={item}
-                      className="flex items-center justify-between rounded-lg border border-slate-200 bg-paper p-4"
-                    >
-                      <span className="text-sm font-medium text-slate-700">{item}</span>
-                      <span
-                        className={`h-2.5 w-2.5 rounded-full ${
-                          index % 3 === 0 ? "bg-accent" : index % 3 === 1 ? "bg-moss" : "bg-amber"
-                        }`}
-                      />
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <LinkButton href={resumeLink}>Resume</LinkButton>
+            <LinkButton href={githubUrl}>GitHub</LinkButton>
+            <LinkButton href={linkedinUrl}>LinkedIn</LinkButton>
           </div>
         </div>
       </section>
@@ -268,11 +229,6 @@ export default function Home() {
                 />
                 <h3 className="text-xl font-bold text-ink">{project.title}</h3>
                 <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <Badge key={tech}>{tech}</Badge>
-                  ))}
-                </div>
                 {project.github || project.live ? (
                   <div className="mt-6 flex gap-3">
                     {project.live ? <LinkButton href={project.live}>Live Site</LinkButton> : null}
@@ -321,8 +277,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="resume" className="px-6 py-16 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-lg bg-ink p-8 text-center text-white shadow-soft sm:p-10">
+      <section id="resume" className="city-band px-6 py-16 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-4xl rounded-lg border border-white/15 bg-ink/80 p-8 text-center text-white shadow-soft backdrop-blur-sm sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Resume</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Ready for co-op and internship roles</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
