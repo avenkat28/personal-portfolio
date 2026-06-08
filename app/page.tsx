@@ -15,7 +15,8 @@ const projects = [
     title: "NLP Smart Calendar",
     description:
       "Built a smart calendar assistant during a Cisco hackathon using Flask, React, and the Google Calendar API. The app used NLP and voice input to parse natural language scheduling requests such as \"tomorrow for a half hour\" and convert them into calendar events.",
-    tech: ["Python", "Flask", "React", "Google Calendar API", "NLP", "REST APIs"]
+    tech: ["Python", "Flask", "React", "Google Calendar API", "NLP", "REST APIs"],
+    github: "https://github.com/avenkat28/NLPSmartAssistant"
   },
   {
     title: "Premier League Transfer Value ML Research",
@@ -36,13 +37,15 @@ const projects = [
     title: "MealBuddy",
     description:
       "Built a full-stack meal planning application with Flask, Streamlit, and MySQL. Designed a normalized relational database, created REST APIs, and built user interfaces for different personas.",
-    tech: ["Python", "Flask", "Streamlit", "MySQL", "SQL", "REST APIs", "database design"]
+    tech: ["Python", "Flask", "Streamlit", "MySQL", "SQL", "REST APIs", "database design"],
+    github: "https://github.com/avenkat28/Meal-Buddy-CS-3200"
   },
   {
     title: "FC 26 Pro Clubs Stats Tracker",
     description:
       "Currently building a sports analytics web app to track FC 26 Pro Clubs player and team statistics over time. The project focuses on performance tracking, dashboards, and insights for players.",
     tech: ["React", "Python", "data analytics", "sports analytics", "dashboards"],
+    live: "https://proclubshq.vercel.app/",
     github: "https://github.com/avenkat28/Pro-Clubs-Stats-Tracker" // Update this with the project GitHub link.
   }
 ];
