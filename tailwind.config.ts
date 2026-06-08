@@ -8,11 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0f172a",
-        accent: "#4f46e5"
+        ink: "#172033",
+        accent: "#2563eb",
+        moss: "#2f7d65",
+        amber: "#c47a2c",
+        paper: "#f7f8fb"
       },
       boxShadow: {
-        soft: "0 18px 50px rgba(15, 23, 42, 0.08)"
+        soft: "0 18px 45px rgba(23, 32, 51, 0.08)",
+        card: "0 10px 28px rgba(23, 32, 51, 0.06)"
       }
     }
   },

@@ -109,7 +109,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto mb-10 max-w-3xl text-center">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{eyebrow}</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-moss">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{title}</h2>
       {description ? <p className="mt-4 text-base leading-7 text-slate-600">{description}</p> : null}
     </div>
@@ -118,7 +118,7 @@ function SectionHeading({
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-slate-700">
+    <span className="rounded-full border border-slate-200 bg-paper px-3 py-1 text-sm font-medium text-slate-700">
       {children}
     </span>
   );
@@ -135,8 +135,8 @@ function LinkButton({
 }) {
   const styles =
     variant === "primary"
-      ? "bg-accent text-white shadow-soft hover:bg-indigo-700"
-      : "border border-slate-200 bg-white text-slate-800 hover:border-indigo-200 hover:text-accent";
+      ? "bg-accent text-white shadow-soft hover:bg-blue-700"
+      : "border border-slate-200 bg-white text-slate-800 hover:border-accent/30 hover:text-accent hover:shadow-card";
 
   const isExternal = href.startsWith("http");
 
@@ -154,15 +154,33 @@ function LinkButton({
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden">
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+    <main className="min-h-screen overflow-hidden bg-paper">
+      <section className="border-b border-slate-200 bg-[#fbfcff]">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
+          <a href="#" className="text-sm font-bold tracking-tight text-ink">
+            Arya Venkat
+          </a>
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 sm:flex">
+            <a className="transition hover:text-accent" href="#projects">
+              Projects
+            </a>
+            <a className="transition hover:text-accent" href="#skills">
+              Skills
+            </a>
+            <a className="transition hover:text-accent" href="#contact">
+              Contact
+            </a>
+          </nav>
+        </div>
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-10 sm:pb-20 sm:pt-14 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-24">
           <div className="flex flex-col justify-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+            <p className="w-fit rounded-full border border-moss/15 bg-moss/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-moss">
               Fintech-focused CS and Business
             </p>
-            <h1 className="mt-5 text-5xl font-bold tracking-tight text-ink sm:text-6xl">Arya Venkat</h1>
-            <p className="mt-5 text-xl font-semibold text-slate-800">
+            <h1 className="mt-6 max-w-3xl text-5xl font-bold tracking-tight text-ink sm:text-6xl">
+              Arya Venkat
+            </h1>
+            <p className="mt-5 max-w-2xl text-xl font-semibold text-slate-800">
               Computer Science and Business Student at Northeastern University
             </p>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
@@ -179,22 +197,29 @@ export default function Home() {
           </div>
 
           <div className="flex items-center lg:justify-end">
-            <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
-              <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+            <div className="w-full max-w-md rounded-lg border border-slate-200 bg-white p-6 shadow-soft">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-5">
                 <div>
-                  <p className="text-sm font-semibold text-accent">Portfolio Snapshot</p>
+                  <p className="text-sm font-semibold text-moss">Portfolio Snapshot</p>
                   <p className="mt-1 text-2xl font-bold text-ink">Software + Data + Business</p>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 text-sm font-bold text-accent ring-1 ring-indigo-100">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white shadow-card">
                   AV
                 </div>
               </div>
-              <div className="mt-6 grid gap-4">
+              <div className="mt-6 grid gap-3">
                 {["Full-stack development", "Machine learning research", "NLP tools", "Database design", "Sports analytics"].map(
-                  (item) => (
-                    <div key={item} className="flex items-center justify-between rounded-lg bg-slate-50 p-4 ring-1 ring-slate-200">
+                  (item, index) => (
+                    <div
+                      key={item}
+                      className="flex items-center justify-between rounded-lg border border-slate-200 bg-paper p-4"
+                    >
                       <span className="text-sm font-medium text-slate-700">{item}</span>
-                      <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+                      <span
+                        className={`h-2.5 w-2.5 rounded-full ${
+                          index % 3 === 0 ? "bg-accent" : index % 3 === 1 ? "bg-moss" : "bg-amber"
+                        }`}
+                      />
                     </div>
                   )
                 )}
@@ -205,18 +230,25 @@ export default function Home() {
       </section>
 
       <section id="about" className="px-6 py-16 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white p-8 shadow-soft sm:p-10">
-          <SectionHeading eyebrow="About" title="Building practical software for data-driven problems" />
-          <p className="text-lg leading-8 text-slate-700">
-            I am a Computer Science and Business student at Northeastern University concentrating in fintech. I enjoy
-            building practical software, working with data, and using technology to solve business problems. My
-            experience includes full-stack development, machine learning research, NLP tools, database design, and sports
-            analytics projects.
-          </p>
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-moss">About</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              Building practical software for data-driven problems
+            </h2>
+          </div>
+          <div className="border-l-4 border-amber bg-white px-6 py-6 shadow-card">
+            <p className="text-lg leading-8 text-slate-700">
+              I am a Computer Science and Business student at Northeastern University concentrating in fintech. I enjoy
+              building practical software, working with data, and using technology to solve business problems. My
+              experience includes full-stack development, machine learning research, NLP tools, database design, and
+              sports analytics projects.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section id="projects" className="bg-white px-6 py-16 sm:py-20 lg:px-8">
+      <section id="projects" className="border-y border-slate-200 bg-white px-6 py-16 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Projects"
@@ -224,11 +256,16 @@ export default function Home() {
             description="A recruiter-friendly overview of projects across software engineering, data, AI/ML, and fintech-adjacent problem solving."
           />
           <div className="grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <article
                 key={project.title}
-                className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+                className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-accent/25 hover:shadow-soft"
               >
+                <div
+                  className={`mb-5 h-1.5 w-16 rounded-full ${
+                    index % 3 === 0 ? "bg-accent" : index % 3 === 1 ? "bg-moss" : "bg-amber"
+                  }`}
+                />
                 <h3 className="text-xl font-bold text-ink">{project.title}</h3>
                 <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{project.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -253,7 +290,7 @@ export default function Home() {
           <SectionHeading eyebrow="Skills" title="Technical toolkit" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {skillGroups.map((group) => (
-              <div key={group.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={group.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-card">
                 <h3 className="text-lg font-bold text-ink">{group.title}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
@@ -266,15 +303,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="bg-white px-6 py-16 sm:py-20 lg:px-8">
+      <section id="experience" className="border-y border-slate-200 bg-white px-6 py-16 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <SectionHeading eyebrow="Experience" title="Relevant experience" />
-          <div className="relative space-y-5 before:absolute before:left-4 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-slate-200">
+          <div className="relative space-y-5 before:absolute before:left-4 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-moss/25">
             {experiences.map((experience) => (
               <article key={experience.title} className="relative pl-12">
-                <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-4 border-white bg-accent shadow" />
-                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-soft">
-                  <p className="text-sm font-semibold text-accent">{experience.organization}</p>
+                <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-4 border-white bg-moss shadow" />
+                <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-card transition hover:border-moss/25 hover:shadow-soft">
+                  <p className="text-sm font-semibold text-moss">{experience.organization}</p>
                   <h3 className="mt-1 text-xl font-bold text-ink">{experience.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{experience.description}</p>
                 </div>
@@ -285,8 +322,8 @@ export default function Home() {
       </section>
 
       <section id="resume" className="px-6 py-16 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-2xl bg-ink p-8 text-center text-white shadow-soft sm:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-200">Resume</p>
+        <div className="mx-auto max-w-4xl rounded-lg bg-ink p-8 text-center text-white shadow-soft sm:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Resume</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Ready for co-op and internship roles</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
             Download a resume tailored for software engineering, AI/ML, analytics, product, and fintech opportunities.
@@ -299,20 +336,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-white px-6 py-16 sm:py-20 lg:px-8">
+      <section id="contact" className="border-t border-slate-200 bg-white px-6 py-16 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <SectionHeading eyebrow="Contact" title="Let’s connect" description="Recruiters and collaborators can reach me here." />
           <div className="grid gap-4 sm:grid-cols-3">
-            <a className="rounded-2xl border border-slate-200 p-6 shadow-sm transition hover:border-indigo-200 hover:shadow-soft" href={`mailto:${email}`}>
-              <p className="text-sm font-semibold text-accent">Email</p>
+            <a className="rounded-lg border border-slate-200 p-6 shadow-card transition hover:border-accent/30 hover:shadow-soft" href={`mailto:${email}`}>
+              <p className="text-sm font-semibold text-moss">Email</p>
               <p className="mt-2 break-words text-slate-700">{email}</p>
             </a>
-            <a className="rounded-2xl border border-slate-200 p-6 shadow-sm transition hover:border-indigo-200 hover:shadow-soft" href={githubUrl} target="_blank" rel="noreferrer">
-              <p className="text-sm font-semibold text-accent">GitHub</p>
+            <a className="rounded-lg border border-slate-200 p-6 shadow-card transition hover:border-accent/30 hover:shadow-soft" href={githubUrl} target="_blank" rel="noreferrer">
+              <p className="text-sm font-semibold text-moss">GitHub</p>
               <p className="mt-2 break-words text-slate-700">github.com/avenkat28</p>
             </a>
-            <a className="rounded-2xl border border-slate-200 p-6 shadow-sm transition hover:border-indigo-200 hover:shadow-soft" href={linkedinUrl} target="_blank" rel="noreferrer">
-              <p className="text-sm font-semibold text-accent">LinkedIn</p>
+            <a className="rounded-lg border border-slate-200 p-6 shadow-card transition hover:border-accent/30 hover:shadow-soft" href={linkedinUrl} target="_blank" rel="noreferrer">
+              <p className="text-sm font-semibold text-moss">LinkedIn</p>
               <p className="mt-2 break-words text-slate-700">www.linkedin.com/in/arya-venkat-81526b245</p>
             </a>
           </div>

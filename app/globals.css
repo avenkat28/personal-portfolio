@@ -11,11 +11,12 @@ html {
 }
 
 body {
-  background: #f7f7fb;
-  color: #0f172a;
+  background: #f7f8fb;
+  color: #172033;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #c7d2fe;
-  color: #0f172a;
+  background: #cfe0ff;
+  color: #172033;
 }
