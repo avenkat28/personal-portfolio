@@ -21,7 +21,7 @@ body {
     linear-gradient(180deg, rgba(9, 18, 29, 0.25), rgba(9, 18, 29, 0.85)),
     url("/sf-skyline.jpg"),
     radial-gradient(circle at 50% 35%, #263f4a 0%, #10212a 52%, #071117 100%);
-  background-position: center;
+  background-position: center 42%;
   background-size: cover;
 }
 
