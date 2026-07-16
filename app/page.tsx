@@ -9,7 +9,8 @@ const projects = [
     description:
       "Built a semester planning web app that helps students identify deadline clusters and high-risk weeks from their syllabi. The app turns course dates, grade-critical work, and prep actions into a dashboard for planning ahead.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF parsing", "data visualization"],
-    live: "https://risk-weeks.vercel.app/"
+    live: "https://risk-weeks.vercel.app/",
+    github: "https://github.com/avenkat28/risk-weeks"
   },
   {
     title: "NLP Smart Calendar",
@@ -102,7 +103,7 @@ function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="mx-auto mb-10 max-w-3xl text-center">
+    <div className="mx-auto mb-12 max-w-3xl text-center">
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-moss">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{title}</h2>
       {description ? <p className="mt-4 text-base leading-7 text-slate-600">{description}</p> : null}
@@ -112,7 +113,7 @@ function SectionHeading({
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-slate-200 bg-paper px-3 py-1 text-sm font-medium text-slate-700">
+    <span className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-accent/25 hover:bg-blue-50 hover:text-accent">
       {children}
     </span>
   );
@@ -139,7 +140,7 @@ function LinkButton({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className={`inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-2.5 text-sm font-semibold transition ${styles}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${styles}`}
     >
       {children}
     </a>
@@ -148,13 +149,13 @@ function LinkButton({
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f2f0ec]">
+    <main className="min-h-screen overflow-hidden bg-[#f5f4f1]">
       <section className="hero-scene relative flex min-h-screen items-center justify-center px-5 py-12 text-white">
         <div className="absolute inset-0 bg-ink/55" />
         <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
           <div className="flex w-full items-center justify-center">
             <div className="hidden h-px flex-1 bg-white/70 sm:block" />
-            <div className="grid h-28 w-28 place-items-center rounded-full border border-white/80 bg-white/5 text-3xl font-bold shadow-soft backdrop-blur-sm">
+            <div className="grid h-28 w-28 place-items-center rounded-full border border-white/80 bg-white/10 text-3xl font-bold shadow-soft backdrop-blur-md">
               AV
             </div>
             <div className="hidden h-px flex-1 bg-white/70 sm:block" />
@@ -168,7 +169,7 @@ export default function Home() {
             Software Engineering | AI/ML | Data Analytics | Product | Fintech
           </p>
           <div className="mt-16 h-px w-full max-w-4xl bg-white/70" />
-          <nav className="mt-10 grid w-full max-w-3xl grid-cols-2 overflow-hidden rounded-lg border border-white/80 bg-black/10 text-xs font-semibold uppercase tracking-[0.24em] backdrop-blur-sm sm:grid-cols-4 sm:text-sm">
+          <nav aria-label="Portfolio sections" className="mt-10 grid w-full max-w-3xl grid-cols-2 overflow-hidden rounded-xl border border-white/70 bg-black/10 text-xs font-semibold uppercase tracking-[0.24em] shadow-soft backdrop-blur-md sm:grid-cols-4 sm:text-sm">
             <a className="border-b border-r border-white/50 px-4 py-5 transition hover:bg-white/15 sm:border-b-0" href="#about">
               Intro
             </a>
@@ -198,7 +199,7 @@ export default function Home() {
               Building practical software for data-driven problems
             </h2>
           </div>
-          <div className="border-l-4 border-amber bg-white px-6 py-6 shadow-card">
+          <div className="rounded-r-2xl border-l-4 border-amber bg-white px-6 py-7 shadow-card">
             <p className="text-lg leading-8 text-slate-700">
               I am a Computer Science and Business student at Northeastern University concentrating in fintech. I enjoy
               building practical software, working with data, and using technology to solve business problems. My
@@ -220,7 +221,7 @@ export default function Home() {
             {projects.map((project, index) => (
               <article
                 key={project.title}
-                className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-accent/25 hover:shadow-soft"
+                className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-soft"
               >
                 <div
                   className={`mb-5 h-1.5 w-16 rounded-full ${
@@ -229,8 +230,13 @@ export default function Home() {
                 />
                 <h3 className="text-xl font-bold text-ink">{project.title}</h3>
                 <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{project.description}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tech.map((technology) => (
+                    <Badge key={technology}>{technology}</Badge>
+                  ))}
+                </div>
                 {project.github || project.live ? (
-                  <div className="mt-6 flex gap-3">
+                  <div className="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-5">
                     {project.live ? <LinkButton href={project.live}>Live Site</LinkButton> : null}
                     {project.github ? <LinkButton href={project.github}>GitHub</LinkButton> : null}
                   </div>
@@ -246,7 +252,7 @@ export default function Home() {
           <SectionHeading eyebrow="Skills" title="Technical toolkit" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {skillGroups.map((group) => (
-              <div key={group.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-card">
+              <div key={group.title} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft">
                 <h3 className="text-lg font-bold text-ink">{group.title}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
@@ -266,7 +272,7 @@ export default function Home() {
             {experiences.map((experience) => (
               <article key={experience.title} className="relative pl-12">
                 <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-4 border-white bg-moss shadow" />
-                <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-card transition hover:border-moss/25 hover:shadow-soft">
+                <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition duration-300 hover:border-moss/25 hover:shadow-soft">
                   <p className="text-sm font-semibold text-moss">{experience.organization}</p>
                   <h3 className="mt-1 text-xl font-bold text-ink">{experience.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{experience.description}</p>
@@ -278,7 +284,7 @@ export default function Home() {
       </section>
 
       <section id="resume" className="city-band px-6 py-16 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-lg border border-white/15 bg-ink/80 p-8 text-center text-white shadow-soft backdrop-blur-sm sm:p-10">
+        <div className="mx-auto max-w-4xl rounded-2xl border border-white/15 bg-ink/80 p-8 text-center text-white shadow-soft backdrop-blur-md sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Resume</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Ready for co-op and internship roles</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
@@ -296,15 +302,15 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <SectionHeading eyebrow="Contact" title="Let’s connect" description="Recruiters and collaborators can reach me here." />
           <div className="grid gap-4 sm:grid-cols-3">
-            <a className="rounded-lg border border-slate-200 p-6 shadow-card transition hover:border-accent/30 hover:shadow-soft" href={`mailto:${email}`}>
+            <a className="rounded-2xl border border-slate-200/80 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft" href={`mailto:${email}`}>
               <p className="text-sm font-semibold text-moss">Email</p>
               <p className="mt-2 break-words text-slate-700">{email}</p>
             </a>
-            <a className="rounded-lg border border-slate-200 p-6 shadow-card transition hover:border-accent/30 hover:shadow-soft" href={githubUrl} target="_blank" rel="noreferrer">
+            <a className="rounded-2xl border border-slate-200/80 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft" href={githubUrl} target="_blank" rel="noreferrer">
               <p className="text-sm font-semibold text-moss">GitHub</p>
               <p className="mt-2 break-words text-slate-700">github.com/avenkat28</p>
             </a>
-            <a className="rounded-lg border border-slate-200 p-6 shadow-card transition hover:border-accent/30 hover:shadow-soft" href={linkedinUrl} target="_blank" rel="noreferrer">
+            <a className="rounded-2xl border border-slate-200/80 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft" href={linkedinUrl} target="_blank" rel="noreferrer">
               <p className="text-sm font-semibold text-moss">LinkedIn</p>
               <p className="mt-2 break-words text-slate-700">www.linkedin.com/in/arya-venkat-81526b245</p>
             </a>

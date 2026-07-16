@@ -11,9 +11,17 @@ html {
 }
 
 body {
-  background: #f7f8fb;
+  background: #f5f4f1;
   color: #172033;
   text-rendering: optimizeLegibility;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+section[id] {
+  scroll-margin-top: 2rem;
 }
 
 .hero-scene {
@@ -37,4 +45,17 @@ body {
 ::selection {
   background: #cfe0ff;
   color: #172033;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
