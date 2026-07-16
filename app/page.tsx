@@ -45,7 +45,7 @@ const projects = [
     description:
       "Currently building a sports analytics web app to track FC 26 Pro Clubs player and team statistics over time. The project focuses on performance tracking, dashboards, and insights for players.",
     tech: ["React", "Python", "data analytics", "sports analytics", "dashboards"],
-    live: "https://proclubshq.vercel.app/",
+    live: "https://proclubshq.onrender.com/",
     github: "https://github.com/avenkat28/Pro-Clubs-Stats-Tracker" // Update this with the project GitHub link.
   }
 ];
