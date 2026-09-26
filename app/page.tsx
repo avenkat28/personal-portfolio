@@ -1,5 +1,5 @@
 const resumeLink = "/resume.pdf"; // Place your resume PDF in the public folder as public/resume.pdf.
-const email = "venkat.ar@northeastern.edu"; // Update this with your preferred recruiter contact email.
+const email = "arya.venkat@gmail.com";
 const githubUrl = "https://github.com/avenkat28"; // Update this with your GitHub profile.
 const linkedinUrl = "https://www.linkedin.com/in/arya-venkat-81526b245/"; // Update this with your LinkedIn profile.
 
