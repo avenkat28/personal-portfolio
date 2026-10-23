@@ -35,11 +35,13 @@ const projects = [
     ]
   },
   {
-    title: "MealBuddy",
+    title: "FantasyAdvisor",
     description:
-      "Built a full-stack meal planning application with Flask, Streamlit, and MySQL. Designed a normalized relational database, created REST APIs, and built user interfaces for different personas.",
-    tech: ["Python", "Flask", "Streamlit", "MySQL", "SQL", "REST APIs", "database design"],
-    github: "https://github.com/avenkat28/Meal-Buddy-CS-3200"
+      "I built FantasyAdvisor to help with weekly fantasy football lineup decisions. It brings together NFL player stats, matchup history, and projected PPR points so I can compare running backs and wide receivers before deciding who to start.",
+    learned: "I got more practice cleaning sports data, building features from past games, and checking models against simple baselines. I also learned how to serve predictions through FastAPI and connect them to a Next.js dashboard.",
+    tech: ["Python", "FastAPI", "Next.js", "TypeScript", "pandas", "scikit-learn", "XGBoost", "Recharts"],
+    live: "https://fantasy-advisor-henna.vercel.app/",
+    github: "https://github.com/avenkat28/fantasy-advisor"
   },
   {
     title: "FC 26 Pro Clubs Stats Tracker",
@@ -58,13 +60,17 @@ const skillGroups = [
   },
   {
     title: "Frameworks and Tools",
-    skills: ["React", "Next.js", "Flask", "Streamlit", "Tailwind CSS", "Git", "GitHub", "REST APIs"]
+    skills: ["React", "Next.js", "Flask", "FastAPI", "Streamlit", "Tailwind CSS", "Recharts", "Git", "GitHub", "REST APIs", "Vercel"]
   },
   {
     title: "Data and ML",
     skills: [
       "pandas",
       "scikit-learn",
+      "XGBoost",
+      "feature engineering",
+      "model evaluation",
+      "data visualization",
       "data cleaning",
       "regression models",
       "ensemble models",
@@ -215,7 +221,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Projects"
             title="Selected work"
-            description="A recruiter-friendly overview of projects across software engineering, data, AI/ML, and fintech-adjacent problem solving."
+            description="A few things I’ve built, from semester planning tools to sports analytics apps."
           />
           <div className="grid gap-6 md:grid-cols-2">
             {projects.map((project, index) => (
@@ -230,6 +236,12 @@ export default function Home() {
                 />
                 <h3 className="text-xl font-bold text-ink">{project.title}</h3>
                 <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{project.description}</p>
+                {project.learned ? (
+                  <div className="mt-4 text-sm leading-7 text-slate-600">
+                    <p className="font-semibold text-ink">What I learned</p>
+                    <p>{project.learned}</p>
+                  </div>
+                ) : null}
                 <div className="mt-5 flex flex-wrap gap-2">
                   {project.tech.map((technology) => (
                     <Badge key={technology}>{technology}</Badge>

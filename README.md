@@ -37,3 +37,13 @@ npm run build
    - Build Command: `npm run build`
    - Output Directory: `.next`
 5. Deploy.
+
+## Updating the resume
+
+Edit `resume.md`, then regenerate the one-page downloadable PDF on macOS:
+
+```bash
+swift -module-cache-path /tmp/portfolio-swift-cache scripts/build-resume.swift
+```
+
+The generator writes `public/resume.pdf` and checks that the content fits on one page.
