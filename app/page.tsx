@@ -1,5 +1,5 @@
-const resumeLink = "/resume.pdf";
-const businessResumeLink = "/business-resume.pdf";
+const resumeLink = "/VenkatAryaResume.pdf";
+const businessResumeLink = "/AryaVenkatResume.pdf";
 const email = "arya.venkat@gmail.com";
 const githubUrl = "https://github.com/avenkat28"; // Update this with your GitHub profile.
 const linkedinUrl = "https://www.linkedin.com/in/arya-venkat-81526b245/"; // Update this with your LinkedIn profile.

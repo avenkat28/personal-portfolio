@@ -24,7 +24,7 @@ npm run build
 
 ## Update Before Publishing
 
-- Confirm the resume files exist at `public/resume.pdf` and `public/business-resume.pdf`.
+- Confirm the resume files exist at `public/VenkatAryaResume.pdf` and `public/AryaVenkatResume.pdf`.
 - Update the email and any remaining project links in `app/page.tsx`.
 
 ## Deploying on Vercel
@@ -40,7 +40,7 @@ npm run build
 
 ## Updating the resume
 
-The site serves the supplied CS resume, `VenkatAryaResume.pdf`, at `public/resume.pdf`, and the business resume, `AryaVenkatResume.pdf`, at `public/business-resume.pdf`. Replace the corresponding file with your latest PDF to update its links in the hero and resumes sections.
+The site serves the supplied CS resume, `VenkatAryaResume.pdf`, at `public/VenkatAryaResume.pdf`, and the business resume, `AryaVenkatResume.pdf`, at `public/AryaVenkatResume.pdf`. Replace the corresponding file with your latest PDF to update its links in the hero and resumes sections.
 
 `resume.md` is an older editable draft. To deliberately replace the supplied PDF with a generated version of that draft on macOS, run:
 
