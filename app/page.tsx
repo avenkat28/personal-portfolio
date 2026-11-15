@@ -1,4 +1,5 @@
-const resumeLink = "/resume.pdf"; // Place your resume PDF in the public folder as public/resume.pdf.
+const resumeLink = "/resume.pdf";
+const businessResumeLink = "/business-resume.pdf";
 const email = "arya.venkat@gmail.com";
 const githubUrl = "https://github.com/avenkat28"; // Update this with your GitHub profile.
 const linkedinUrl = "https://www.linkedin.com/in/arya-venkat-81526b245/"; // Update this with your LinkedIn profile.
@@ -190,7 +191,8 @@ export default function Home() {
             </a>
           </nav>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <LinkButton href={resumeLink}>Resume</LinkButton>
+            <LinkButton href={resumeLink}>CS Resume</LinkButton>
+            <LinkButton href={businessResumeLink}>Business Resume</LinkButton>
             <LinkButton href={githubUrl}>GitHub</LinkButton>
             <LinkButton href={linkedinUrl}>LinkedIn</LinkButton>
           </div>
@@ -297,14 +299,17 @@ export default function Home() {
 
       <section id="resume" className="city-band px-6 py-16 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-4xl rounded-2xl border border-white/15 bg-ink/80 p-8 text-center text-white shadow-soft backdrop-blur-md sm:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Resume</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Resumes</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Ready for co-op and internship roles</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
-            Download a resume tailored for software engineering, AI/ML, analytics, product, and fintech opportunities.
+            Explore my CS resume for software engineering and AI/ML roles, or my business resume for business analytics and finance opportunities.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <LinkButton href={resumeLink} variant="primary">
-              Download Resume
+              View CS Resume (PDF)
+            </LinkButton>
+            <LinkButton href={businessResumeLink} variant="primary">
+              View Business Resume (PDF)
             </LinkButton>
           </div>
         </div>
