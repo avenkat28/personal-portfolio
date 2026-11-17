@@ -6,6 +6,13 @@ const linkedinUrl = "https://www.linkedin.com/in/arya-venkat-81526b245/"; // Upd
 
 const projects = [
   {
+    title: "PortfolioBro",
+    description:
+      "Built a paper investment portfolio tracker that records stock trades and uses average-cost accounting to calculate holdings and realized and unrealized gains. The backend uses PostgreSQL transactions to prevent concurrent trades from overselling a position.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "REST APIs", "JUnit"],
+    github: "https://github.com/avenkat28/portfolio-bro"
+  },
+  {
     title: "RiskWeeks",
     description:
       "Built a semester planning web app that helps students identify deadline clusters and high-risk weeks from their syllabi. The app turns course dates, grade-critical work, and prep actions into a dashboard for planning ahead.",
