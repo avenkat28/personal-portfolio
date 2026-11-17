@@ -94,16 +94,20 @@ const skillGroups = [
 
 const experiences = [
   {
-    title: "Machine Learning Research",
-    organization: "UT Dallas StaRLing Lab",
+    title: "AI Engineering Intern",
+    organization: "Pantry",
+    timeframe: "Jun 2026 – Aug 2026",
+    location: "Remote",
     description:
-      "Researched transfer value modeling with sports data, preprocessing pipelines, and regression and ensemble model evaluation."
+      "Built Python scripts to clean and standardize recipe and nutrition data for AI-powered meal recommendations. Evaluated suggestions against dietary preferences, calorie targets, and ingredient restrictions, and added validation checks to flag missing nutrition information."
   },
   {
-    title: "Cisco Hackathon",
-    organization: "Smart Calendar Project",
+    title: "Research Intern",
+    organization: "UT Dallas StaRLing Lab",
+    timeframe: "Jun 2023 – Jul 2023",
+    location: "Dallas, TX",
     description:
-      "Built an NLP scheduling assistant with voice input, a React interface, Flask APIs, and Google Calendar integration."
+      "Co-authored research on how player performance predicts transfer values, analyzing 421 Premier League transfers and more than 20 player statistics. Built a Python data pipeline and used cross-validation to compare regression, neural network, and ensemble models."
   }
 ];
 
@@ -218,8 +222,8 @@ export default function Home() {
             <p className="text-lg leading-8 text-slate-700">
               I am a Computer Science and Business student at Northeastern University concentrating in fintech. I enjoy
               building practical software, working with data, and using technology to solve business problems. My
-              experience includes full-stack development, machine learning research, NLP tools, database design, and
-              sports analytics projects.
+              experience includes evaluating AI-powered meal recommendations at Pantry and researching football transfer
+              values at UT Dallas. My projects span full-stack development, fintech, and sports analytics.
             </p>
           </div>
         </div>
@@ -296,6 +300,7 @@ export default function Home() {
                 <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition duration-300 hover:border-moss/25 hover:shadow-soft">
                   <p className="text-sm font-semibold text-moss">{experience.organization}</p>
                   <h3 className="mt-1 text-xl font-bold text-ink">{experience.title}</h3>
+                  <p className="mt-1 text-sm text-slate-600">{experience.timeframe} · {experience.location}</p>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{experience.description}</p>
                 </div>
               </article>
